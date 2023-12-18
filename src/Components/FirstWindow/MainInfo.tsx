@@ -12,38 +12,38 @@ const MainInfo = () => {
     return (
         <>
             {store.main_info.map((el, index) => {
-				return <Fragment key={index}>
-					<InputLabel>{el["name"]}</InputLabel>
-					{(el["type"] === "textarea") ?
-					<Textarea
-						placeholder={el["name"]} 
-						value={el["value"]}
-						required={el["required"]}
-						minRows={2}
-						onChange={(e) => store.onChange(e, "main_info", index)}
-					/> : (el["type"] === "option") ?
-					<FormControl>
-						<Select
-							value={el["value"]}
-							onChange={(e) => store.onChange(e, "main_info", index)}
-							className="option"
-						>
-							<MenuItem value={"male"}>male</MenuItem>
-							<MenuItem value={"female"}>female</MenuItem>
-						</Select>
-					</FormControl> :
-					<Input
-						placeholder="Input here"
-						name={el["name"]}
-						value={el["value"]}
-						required={el["required"]}
-						type={el["type"]}
-						variant="outlined"
-						onChange={(e) => store.onChange(e, "main_info", index)}
-					/>
-					}
-				</Fragment>
-			})}
+		return <Fragment key={index}>
+			<InputLabel>{el["name"]}</InputLabel>
+			{(el["type"] === "textarea") ?
+			<Textarea
+				placeholder={el["name"]} 
+				value={el["value"]}
+				required={el["required"]}
+				minRows={2}
+				onChange={(e) => store.onChange(e, "main_info", index)}
+			/> : (el["type"] === "option") ?
+			<FormControl>
+				<Select
+					value={el["value"]}
+					onChange={(e) => store.onChange(e, "main_info", index)}
+					className="option"
+				>
+					<MenuItem value={"male"}>male</MenuItem>
+					<MenuItem value={"female"}>female</MenuItem>
+				</Select>
+			</FormControl> :
+			<Input
+				placeholder="Input here"
+				name={el["name"]}
+				value={el["value"]}
+				required={el["required"]}
+				type={el["type"]}
+				variant="outlined"
+				onChange={(e) => store.onChange(e, "main_info", index)}
+			/>
+			}
+		</Fragment>
+		})}
         </>
     )
 }
